@@ -1,0 +1,57 @@
+[project]
+name = "dragino-lorawan"
+version = "0.0.0"
+description = "Dragino LoRaWAN device models and command-line reader"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "Tom Frenzel", email = "admin@tom-frenzel.de" }]
+requires-python = ">=3.12"
+dependencies = ["lorawan-connection>=1.3.0"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: AsyncIO",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Home Automation",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+chirpstack = ["lorawan-connection[chirpstack]>=1.3.0"]
+tts = ["lorawan-connection[tts]>=1.3.0"]
+
+[project.scripts]
+dragino-lorawan = "dragino_lorawan.__main__:main"
+
+[project.urls]
+Repository = "https://github.com/tomfrenzel/dragino-lorawan"
+Issues = "https://github.com/tomfrenzel/dragino-lorawan/issues"
+
+[build-system]
+requires = ["uv_build>=0.8.4,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["pytest>=9", "pytest-asyncio>=1", "pytest-cov>=6", "ruff>=0.11", "mypy>=1.19"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+
+[tool.ruff.lint.isort]
+force-sort-within-sections = true
+combine-as-imports = true
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src"]

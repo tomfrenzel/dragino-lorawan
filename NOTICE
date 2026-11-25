@@ -1,0 +1,5 @@
+Extracted from the Dragino LoRaWAN Home Assistant integration
+(https://github.com/tomfrenzel/home-assistant-dragino-lorawan), which was
+adapted from the Home Assistant LoRaWAN proof of concept.
+Original proof of concept by Balloob (@balloob).
+Copyright The Home Assistant Authors. Licensed under Apache License 2.0.
