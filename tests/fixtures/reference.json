@@ -1,0 +1,646 @@
+[
+  {
+    "family": "LHT65",
+    "f_port": 2,
+    "payload": "cbf60b0d0376010add7fff",
+    "name": "ttn-example",
+    "expected": {
+      "data": {
+        "BatV": 3.062,
+        "Bat_status": 3,
+        "TempC_SHT": 28.29,
+        "Hum_SHT": 88.6,
+        "Ext_sensor": "Temperature Sensor",
+        "TempC_DS": 27.81
+      }
+    }
+  },
+  {
+    "family": "LHT65",
+    "f_port": 2,
+    "payload": "cbeaff9c026d01ff387fff",
+    "name": "negative-probe",
+    "expected": {
+      "data": {
+        "BatV": 3.05,
+        "Bat_status": 3,
+        "TempC_SHT": -1,
+        "Hum_SHT": 62.1,
+        "Ext_sensor": "Temperature Sensor",
+        "TempC_DS": -2
+      }
+    }
+  },
+  {
+    "family": "LHT65",
+    "f_port": 2,
+    "payload": "cbf6fc1803760000000000",
+    "name": "negative-no-probe",
+    "expected": {
+      "data": {
+        "BatV": 3.062,
+        "Bat_status": 3,
+        "TempC_SHT": -10,
+        "Hum_SHT": 88.6,
+        "Ext_sensor": "No external sensor"
+      }
+    }
+  },
+  {
+    "family": "LHT65",
+    "f_port": 2,
+    "payload": "0bf60b0d0376040100ffff",
+    "name": "interrupt",
+    "expected": {
+      "data": {
+        "BatV": 3.062,
+        "Bat_status": 0,
+        "TempC_SHT": 28.29,
+        "Hum_SHT": 88.6,
+        "Work_mode": "Interrupt Sensor send",
+        "Exti_pin_level": "High",
+        "Exti_status": "False"
+      }
+    }
+  },
+  {
+    "family": "LHT65",
+    "f_port": 2,
+    "payload": "cbf60b0d03760500647fff",
+    "name": "illuminance",
+    "expected": {
+      "data": {
+        "BatV": 3.062,
+        "Bat_status": 3,
+        "TempC_SHT": 28.29,
+        "Hum_SHT": 88.6,
+        "Work_mode": "Illumination Sensor",
+        "ILL_lx": 100
+      }
+    }
+  },
+  {
+    "family": "LHT65",
+    "f_port": 2,
+    "payload": "cbf60b0d0376060bb87fff",
+    "name": "adc",
+    "expected": {
+      "data": {
+        "BatV": 3.062,
+        "Bat_status": 3,
+        "TempC_SHT": 28.29,
+        "Hum_SHT": 88.6,
+        "Work_mode": "ADC Sensor",
+        "ADC_V": 3
+      }
+    }
+  },
+  {
+    "family": "LHT65",
+    "f_port": 2,
+    "payload": "cbf60b0d0376070102ffff",
+    "name": "count-16",
+    "expected": {
+      "data": {
+        "BatV": 3.062,
+        "Bat_status": 3,
+        "TempC_SHT": 28.29,
+        "Hum_SHT": 88.6,
+        "Work_mode": "Interrupt Sensor count",
+        "Exit_count": 258
+      }
+    }
+  },
+  {
+    "family": "LHT65",
+    "f_port": 2,
+    "payload": "cbf60b0d03760801020304",
+    "name": "count-32",
+    "expected": {
+      "data": {
+        "BatV": 3.062,
+        "Bat_status": 3,
+        "TempC_SHT": 28.29,
+        "Hum_SHT": 88.6,
+        "Work_mode": "Interrupt Sensor count",
+        "Exit_count": 16909060
+      }
+    }
+  },
+  {
+    "family": "LHT65",
+    "f_port": 2,
+    "payload": "ff9c0b0d43760900000000",
+    "name": "probe-and-timestamp",
+    "expected": {
+      "data": {
+        "TempC_DS": -1,
+        "Bat_status": 1,
+        "TempC_SHT": 28.29,
+        "Hum_SHT": 88.6,
+        "Work_mode": "DS18B20 & timestamp",
+        "Systimestamp": 0
+      }
+    }
+  },
+  {
+    "family": "LHT65",
+    "f_port": 2,
+    "payload": "cbea0105026d4101aa7fff",
+    "name": "datalog",
+    "expected": null
+  },
+  {
+    "family": "LDS02",
+    "f_port": 10,
+    "payload": "8bd00100000500000701",
+    "name": "open-alarm",
+    "expected": {
+      "data": {
+        "Node_type": "LDS02",
+        "BAT_V": 3.024,
+        "MOD": 1,
+        "DOOR_OPEN_STATUS": 1,
+        "DOOR_OPEN_TIMES": 5,
+        "LAST_DOOR_OPEN_DURATION": 7,
+        "ALARM": 1
+      }
+    }
+  },
+  {
+    "family": "LDS02",
+    "f_port": 10,
+    "payload": "0bd00100ffff00001e00",
+    "name": "closed",
+    "expected": {
+      "data": {
+        "Node_type": "LDS02",
+        "BAT_V": 3.024,
+        "MOD": 1,
+        "DOOR_OPEN_STATUS": 0,
+        "DOOR_OPEN_TIMES": 65535,
+        "LAST_DOOR_OPEN_DURATION": 30,
+        "ALARM": 0
+      }
+    }
+  },
+  {
+    "family": "LDS02",
+    "f_port": 10,
+    "payload": "cbd00300000000000001",
+    "name": "combined",
+    "expected": {
+      "data": {
+        "Node_type": "LWL02",
+        "BAT_V": 3.024,
+        "MOD": 3,
+        "DOOR_OPEN_STATUS": 1,
+        "WATER_LEAK_STATUS": 1,
+        "ALARM": 1
+      }
+    }
+  },
+  {
+    "family": "LWL02",
+    "f_port": 10,
+    "payload": "4bd00200000300000400",
+    "name": "leak",
+    "expected": {
+      "data": {
+        "Node_type": "LWL02",
+        "BAT_V": 3.024,
+        "MOD": 2,
+        "WATER_LEAK_STATUS": 1,
+        "WATER_LEAK_TIMES": 3,
+        "LAST_WATER_LEAK_DURATION": 4
+      }
+    }
+  },
+  {
+    "family": "LWL02",
+    "f_port": 10,
+    "payload": "0bd002ffffff00001e00",
+    "name": "dry",
+    "expected": {
+      "data": {
+        "Node_type": "LWL02",
+        "BAT_V": 3.024,
+        "MOD": 2,
+        "WATER_LEAK_STATUS": 0,
+        "WATER_LEAK_TIMES": 16777215,
+        "LAST_WATER_LEAK_DURATION": 30
+      }
+    }
+  },
+  {
+    "family": "LWL02",
+    "f_port": 10,
+    "payload": "4bd00300000000000000",
+    "name": "combined",
+    "expected": {
+      "data": {
+        "Node_type": "LWL02",
+        "BAT_V": 3.024,
+        "MOD": 3,
+        "DOOR_OPEN_STATUS": 0,
+        "WATER_LEAK_STATUS": 1,
+        "ALARM": 0
+      }
+    }
+  },
+  {
+    "family": "LT22222",
+    "f_port": 2,
+    "payload": "05dcff060fa04e208a0041",
+    "name": "mode-1",
+    "expected": {
+      "data": {
+        "Hardware_mode": "LT22222",
+        "DO1_status": "H",
+        "DO2_status": "L",
+        "RO1_status": "ON",
+        "RO2_status": "OFF",
+        "Work_mode": "2ACI+2AVI",
+        "AVI1_V": 1.5,
+        "AVI2_V": -0.25,
+        "ACI1_mA": 4,
+        "ACI2_mA": 20,
+        "DI1_status": "H",
+        "DI2_status": "L"
+      }
+    }
+  },
+  {
+    "family": "LT22222",
+    "f_port": 2,
+    "payload": "05dcff060fa04e20750001",
+    "name": "mode-1-lt33222",
+    "expected": {
+      "data": {
+        "Hardware_mode": "LT33222",
+        "DO3_status": "L",
+        "DI3_status": "H",
+        "DO1_status": "L",
+        "DO2_status": "H",
+        "RO1_status": "OFF",
+        "RO2_status": "ON",
+        "Work_mode": "2ACI+2AVI",
+        "AVI1_V": 1.5,
+        "AVI2_V": -0.25,
+        "ACI1_mA": 4,
+        "ACI2_mA": 20,
+        "DI1_status": "L",
+        "DI2_status": "H"
+      }
+    }
+  },
+  {
+    "family": "LT22222",
+    "f_port": 2,
+    "payload": "0000000a0000000bc00042",
+    "name": "mode-2",
+    "expected": {
+      "data": {
+        "Hardware_mode": "LT22222",
+        "DO1_status": "H",
+        "DO2_status": "H",
+        "RO1_status": "ON",
+        "RO2_status": "ON",
+        "Count1_times": 10,
+        "First_status": "No",
+        "Work_mode": "Count mode 1",
+        "Count2_times": 11
+      }
+    }
+  },
+  {
+    "family": "LT22222",
+    "f_port": 2,
+    "payload": "ffffffff00000001000042",
+    "name": "mode-2-max",
+    "expected": {
+      "data": {
+        "Hardware_mode": "LT22222",
+        "DO1_status": "H",
+        "DO2_status": "H",
+        "RO1_status": "OFF",
+        "RO2_status": "OFF",
+        "Count1_times": 4294967295,
+        "First_status": "No",
+        "Work_mode": "Count mode 1",
+        "Count2_times": 1
+      }
+    }
+  },
+  {
+    "family": "LT22222",
+    "f_port": 2,
+    "payload": "000000070fa0ff9c010043",
+    "name": "mode-3",
+    "expected": {
+      "data": {
+        "Hardware_mode": "LT22222",
+        "DO1_status": "L",
+        "DO2_status": "H",
+        "RO1_status": "OFF",
+        "RO2_status": "OFF",
+        "Count1_times": 7,
+        "First_status": "No",
+        "Work_mode": "2ACI+1Count",
+        "ACI1_mA": 4,
+        "ACI2_mA": -0.1
+      }
+    }
+  },
+  {
+    "family": "LT22222",
+    "f_port": 2,
+    "payload": "00000009000000204a0044",
+    "name": "mode-4",
+    "expected": {
+      "data": {
+        "Hardware_mode": "LT22222",
+        "DO1_status": "H",
+        "DO2_status": "L",
+        "RO1_status": "OFF",
+        "RO2_status": "ON",
+        "Count1_times": 9,
+        "First_status": "No",
+        "Work_mode": "Count mode 2",
+        "Acount_times": 32
+      }
+    }
+  },
+  {
+    "family": "LT22222",
+    "f_port": 2,
+    "payload": "05dc07d00fa0002a020045",
+    "name": "mode-5",
+    "expected": {
+      "data": {
+        "Hardware_mode": "LT22222",
+        "DO1_status": "H",
+        "DO2_status": "L",
+        "RO1_status": "OFF",
+        "RO2_status": "OFF",
+        "First_status": "No",
+        "Work_mode": " 1ACI+2AVI+1Count",
+        "AVI1_V": 1.5,
+        "AVI2_V": 2,
+        "ACI1_mA": 4,
+        "Count1_times": 42
+      }
+    }
+  },
+  {
+    "family": "LT22222",
+    "f_port": 5,
+    "payload": "01ff0160000258",
+    "name": "status-manual",
+    "expected": {
+      "data": {
+        "FIRMWARE_VERSION": "1.6.0",
+        "FREQUENCY_BAND": "EU868",
+        "SUB_BAND": "NULL",
+        "TDC_sec": 600
+      }
+    }
+  },
+  {
+    "family": "LT22222",
+    "f_port": 5,
+    "payload": "0208f2ab0004b0",
+    "name": "status-two-digit",
+    "expected": {
+      "data": {
+        "FIRMWARE_VERSION": "2.10.11",
+        "FREQUENCY_BAND": "US915",
+        "SUB_BAND": 8,
+        "TDC_sec": 1200
+      }
+    }
+  },
+  {
+    "family": "LT22222",
+    "f_port": 5,
+    "payload": "0fff0161000258",
+    "name": "status-as923-4",
+    "expected": {
+      "data": {
+        "FIRMWARE_VERSION": "1.6.1",
+        "FREQUENCY_BAND": "AS923_4",
+        "SUB_BAND": "NULL",
+        "TDC_sec": 600
+      }
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 2,
+    "payload": "37ffffff010203ffffffff",
+    "name": "single-max",
+    "expected": {
+      "data": {
+        "Node_type": "CPL03-LB",
+        "WORKMOD": "CPL01",
+        "CMOD": "PART",
+        "TDC": "YES",
+        "ALARM": "TRUE",
+        "PIN_STATUS": "OPEN",
+        "TTRIG_MOD": 1,
+        "TOTAL_PULSE": 16777215,
+        "LAST_DURATION": 66051,
+        "TIME": "2106-02-07 06:28:15"
+      }
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 2,
+    "payload": "0000000200003c00000000",
+    "name": "single",
+    "expected": {
+      "data": {
+        "Node_type": "CPL03-LB",
+        "WORKMOD": "CPL01",
+        "CMOD": "SUM",
+        "TDC": "NO",
+        "ALARM": "FALSE",
+        "PIN_STATUS": "CLOSE",
+        "TTRIG_MOD": 0,
+        "TOTAL_PULSE": 2,
+        "LAST_DURATION": 60,
+        "TIME": "1970-01-01 00:00:00"
+      }
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 6,
+    "payload": "3f800000ffffff01020305",
+    "name": "counters-roc",
+    "expected": {
+      "data": {
+        "Node_type": "CPL03-LB",
+        "WORKMOD": "CPL03",
+        "CMOD": "PART",
+        "TDC": "YES",
+        "CALCULATE_FLAG": 7,
+        "PA8_TOTAL_PULSE": 8388608,
+        "PA4_TOTAL_PULSE": 16777215,
+        "PB15_TOTAL_PULSE": 66051,
+        "PA8_ROC": "TRUE",
+        "PA4_ROC": "FALSE",
+        "PB15_ROC": "TRUE"
+      }
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 6,
+    "payload": "08000005000006ffffff",
+    "name": "counters",
+    "expected": {
+      "data": {
+        "Node_type": "CPL03-LB",
+        "WORKMOD": "CPL03",
+        "CMOD": "SUM",
+        "TDC": "NO",
+        "CALCULATE_FLAG": 0,
+        "PA8_TOTAL_PULSE": 5,
+        "PA4_TOTAL_PULSE": 6,
+        "PB15_TOTAL_PULSE": 16777215
+      }
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 7,
+    "payload": "19",
+    "name": "interrupt",
+    "expected": {
+      "data": {
+        "EXTI_PA8_Trigger": "FALSE",
+        "EXTI_PA8_Status": "CLOSE",
+        "EXTI_PA4_Trigger": "TRUE",
+        "EXTI_PA4_Status": "OPEN",
+        "EXTI_PB15_Trigger": "FALSE",
+        "EXTI_PB15_Status": "CLOSE",
+        "Node_type": "CPL03-LB"
+      }
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 7,
+    "payload": "26ffffffffffffffffffff",
+    "name": "interrupt-padded",
+    "expected": {
+      "data": {
+        "EXTI_PA8_Trigger": "TRUE",
+        "EXTI_PA8_Status": "OPEN",
+        "EXTI_PA4_Trigger": "FALSE",
+        "EXTI_PA4_Status": "CLOSE",
+        "EXTI_PB15_Trigger": "TRUE",
+        "EXTI_PB15_Status": "OPEN",
+        "Node_type": "CPL03-LB"
+      }
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 5,
+    "payload": "20011101ff0b45",
+    "name": "status",
+    "expected": {
+      "data": {
+        "SENSOR_MODEL": "CPL03-LB",
+        "FIRMWARE_VERSION": "1.1.1",
+        "FREQUENCY_BAND": "EU868",
+        "SUB_BAND": "NULL",
+        "BAT": 2.885
+      }
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 5,
+    "payload": "20011102030e10",
+    "name": "status-sub-band",
+    "expected": {
+      "data": {
+        "SENSOR_MODEL": "CPL03-LB",
+        "FIRMWARE_VERSION": "1.1.1",
+        "FREQUENCY_BAND": "US915",
+        "SUB_BAND": 3,
+        "BAT": 3.6
+      }
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 2,
+    "payload": "00000002000000000000",
+    "name": "error-short",
+    "expected": {
+      "errors": [
+        "Invalid payload length for fPort 2: 10"
+      ]
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 2,
+    "payload": "0800000200003c00000000",
+    "name": "error-mode",
+    "expected": {
+      "errors": [
+        "Unexpected work mode for fPort 2"
+      ]
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 6,
+    "payload": "000000050000060000ff",
+    "name": "error-mode",
+    "expected": {
+      "errors": [
+        "Unexpected work mode for fPort 6"
+      ]
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 5,
+    "payload": "21011101ff0b45",
+    "name": "error-model",
+    "expected": {
+      "errors": [
+        "Unexpected sensor model: 33"
+      ]
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 5,
+    "payload": "20011100ff0b45",
+    "name": "error-band",
+    "expected": {
+      "errors": [
+        "Unknown frequency band: 0"
+      ]
+    }
+  },
+  {
+    "family": "CPL03LB",
+    "f_port": 7,
+    "payload": "",
+    "name": "error-empty",
+    "expected": {
+      "errors": [
+        "Invalid payload length for fPort 7: 0"
+      ]
+    }
+  }
+]
